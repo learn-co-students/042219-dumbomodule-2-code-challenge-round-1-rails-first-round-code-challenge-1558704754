@@ -1,5 +1,5 @@
 class HeroinesController < ApplicationController
-  before_action :get_heroine
+  before_action :get_heroine, only: [:show, :edit, :update, :destroy]
 
   def index
     @heroines = Heroine.all
@@ -9,11 +9,13 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new
   end
 
+  def show
+  end
   def create
     @heroine = Heroine.create(heroine_params)
     if @heroine.valid?
       # @heroine.save
-      redirect_to heroine_path(@heroine)
+      redirect_to @heroine
     else
       flash[:error] = @heroine.errors.full_messages
       render 'new'
@@ -27,7 +29,7 @@ class HeroinesController < ApplicationController
   end
 
   def get_heroine
-    @heroine = Heroine.find_by(params[:id])
+    @heroine = Heroine.find(params[:id])
   end
 
 end

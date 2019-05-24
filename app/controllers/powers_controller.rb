@@ -27,7 +27,7 @@ class PowersController < ApplicationController
   end
 
   def get_power
-    @power= Power.find_by(params[:id])
+    @power= Power.find(params[:id])
   end
 
 end
