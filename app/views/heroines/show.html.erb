@@ -1,0 +1,19 @@
+<div class="heading"
+<h1><%= @heroine.super_name %></h1><br>
+
+<h2><%= @heroine.name %></h2>
+</div>
+<%= form_tag edit_heroine_path, method: "get" do %>
+  <%= submit_tag "Edit #{@heroine.super_name}" %>
+<% end %>
+
+<%= form_tag heroine_path(@heroine.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@heroine.super_name}" %>
+<% end %>
+<div class="heading">
+<h2>Super Power:</h2>
+</div>
+<h3><%= link_to @heroine.power.name, power_path(@heroine.power_id) %></h3>
+
+
+<h3><%= link_to 'Heroines', heroines_path %> </h3>
