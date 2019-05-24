@@ -1,0 +1,14 @@
+<div class="heading">
+<h1><%= @power.name %></h1>
+
+<h2><%= @power.description %></h2>
+</div>
+<%= form_tag edit_power_path, method: "get" do %>
+  <%= submit_tag "Edit #{@power.name}" %><br>
+<% end %>
+
+<%= form_tag power_path(@power.id), method: "delete" do %>
+  <%= submit_tag "Delete #{@power.name}" %><br>
+<% end %>
+
+<%= link_to 'Super Powers', powers_path %>

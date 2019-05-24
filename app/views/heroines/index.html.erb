@@ -1,10 +1,20 @@
-<h2>All Heroines</h2>
 
+<div class="heading">
+<h2>All Heroines</h2>
+</div>
+
+ <div class='heroine'>
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+</div>
+
+
+<%= link_to 'New Heroine', new_heroine_path %><br>
+
+<%= link_to 'Super Powers', powers_path %>
