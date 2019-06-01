@@ -9,8 +9,6 @@ class HeroinesController < ApplicationController
     @heroine = Heroine.new
   end
 
-  def show
-  end
   def create
     @heroine = Heroine.create(heroine_params)
     if @heroine.valid?
